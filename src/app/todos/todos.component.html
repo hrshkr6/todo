@@ -1,11 +1,15 @@
-<h1>TO DO LIST</h1>
-<div>
-    <input type="text" #tasks>
-    <button (click)="addItem(tasks.value)">Add task</button>
+<div class="container">
+    <h1>TO DO LIST</h1>
+    <div>
+        <input type="text" #tasks>
+        <button (click)="addItem(tasks.value)" class="primary">Add task</button>
+    </div>
+
+    
+    <ul *ngFor="let item of todos">
+        <li>{{ item.value }} &nbsp;<button class="danger" (click)="removeItem(item.id)">Delete</button>  &nbsp;<button class="edit-button" (click)="editItem(item.id)">Edit</button> &nbsp; <input type="text" *ngIf="item.edit" #{{item.id}}> <button class="save" *ngIf="item.edit" (click)="saveItem(item.id.value,item.id)" >Save</button> </li>
+    </ul>
 </div>
 
-<ul *ngFor="let item of todos">
-    <li>{{ item.value }} &nbsp;<button (click)="removeItem(item.id)">Delete</button>  &nbsp;<button (click)="editItem(item.id)">Edit</button> &nbsp; <input type="text" *ngIf="item.edit" #`${item.id}`> <button *ngIf="item.edit" (click)="saveItem((item.id).value,item.id)" >Save</button> </li>
-</ul>
 <!-- 
 <input type="text" *ngIf="edit" #edits> <button (click)="editItem(item.id,edits.value)">Edit</button> -->

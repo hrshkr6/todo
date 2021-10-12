@@ -1,0 +1,27 @@
+.container{
+    text-align: center;
+}
+
+button{
+    border: none;
+    box-shadow: none;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.primary{
+    background-color: rgb(86, 153, 230);
+}
+.danger{
+    background-color: rgba(235, 103, 110, 0.74);
+}
+.edit-button{
+    background-color: rgb(231, 215, 71);
+}
+.save{
+    background-color: rgb(55, 233, 174);
+}
+input{
+    border: 1px solid rgb(47, 209, 238);
+}
