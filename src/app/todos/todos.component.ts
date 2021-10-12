@@ -11,12 +11,14 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
    
 
   todos:any[]=[] ;
 
   addItem(item:string){
-     this.todos.push({id:this.todos.length,value:item,edit:false})
+     this.todos.push({id:this.todos.length,value:item,edit:false,editValue:''})
      console.log(this.todos)
   }
   removeItem(id:number){
@@ -32,9 +34,13 @@ export class TodosComponent implements OnInit {
      
   }
 
-  saveItem(val:string,id:number){
-     this.todos[id].value=val;
-    this.todos[id].edit=false;
+  saveItem(id:number){
+    this.todos.forEach(item => {
+      if(item.id===id){
+        item.edit=false
+      
+      }
+    })
   }
 
 }
